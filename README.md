@@ -31,11 +31,11 @@ Here is a DAG (directed acyclic graph) of the workflow:
 
 4) Set up your input data. Data must go in `full_dataset` and `fastq` as follows:
 
-**`full_dataset`**
+**`full_dataset/`**
 
 This includes two subdirectories, `trip_output` and `demux_data`.
 
-`trip_output` has one directory for each pool/techrep/condition combination,
+`full_dataset/trip_output/` has one directory for each pool/techrep/condition combination,
 and inside that directory is a single file, `final_TRIP_data_table.txt`. The
 contents of those files look like this:
 
@@ -46,7 +46,7 @@ TTGGTGGTGTAAGGGA  18845  10945  chr8   +      60954656   29617    34.61   0.193 
 AATACAAATCGTGGAA  16780  6067   *      4      0          7486     0.00    0.208    0.179    *      4      0          7393     2.50    0.286    0.147
 ```
 
-`demux_data` must have one fastq file for each of the pool/techrep/condition
+`full_dataset/demux_data/` must have one fastq file for each of the pool/techrep/condition
 combinations above, but also R1 and R2 for each, and also each library type
 (mapping, normalization, and expression).
 
@@ -56,7 +56,7 @@ The following filename formats are expected:
 * **Expression:** `demux_data/pool{pool}_techrep{techrep}_{condition}_{library}_{read}.fastq.gz`
 * **Normalization:** `demux_data/pool{pool}_techrep{techrep}_{condition}_{library}_{read}.fastq.gz`
 
-**`fastq`**
+**`fastq/`**
 
 This directory must contain two files, `Undetermined_R1.fastq.gz` and
 `Undetermined_R2.fastq.gz`. These are the full, still-multiplexed fastq files
