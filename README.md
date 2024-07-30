@@ -31,22 +31,22 @@ Here is a DAG (directed acyclic graph) of the workflow:
 
 4) Set up your input data. Data must go in `full_dataset` and `fastq` as follows:
 
-**`full_dataset`**
+**`full_dataset/`**
 
 This includes two subdirectories, `trip_output` and `demux_data`.
 
-`trip_output` has one directory for each pool/techrep/condition combination,
+`full_dataset/trip_output/` has one directory for each pool/techrep/condition combination,
 and inside that directory is a single file, `final_TRIP_data_table.txt`. The
 contents of those files look like this:
 
 ```
 barcode           norm   exp_1  chr_f  ori_f  pos_f      reads_f  mapq_f  freq1_f  freq2_f  chr_r  ori_r  pos_r      reads_r  mapq_r  freq1_r  freq2_r
-GATTTAGTCGCTCTCG  22249  37891  *      4      [0](2024-07-30_0.md)          8942     0.00    0.208    0.156    chr5   -      48504758   8830     39.02   0.394    0.247
+GATTTAGTCGCTCTCG  22249  37891  *      4      0          8942     0.00    0.208    0.156    chr5   -      48504758   8830     39.02   0.394    0.247
 TTGGTGGTGTAAGGGA  18845  10945  chr8   +      60954656   29617    34.61   0.193    0.161    chr8   -      60954872   29446    43.92   0.314    0.180
 AATACAAATCGTGGAA  16780  6067   *      4      0          7486     0.00    0.208    0.179    *      4      0          7393     2.50    0.286    0.147
 ```
 
-`demux_data` must have one fastq file for each of the pool/techrep/condition
+`full_dataset/demux_data/` must have one fastq file for each of the pool/techrep/condition
 combinations above, but also R1 and R2 for each, and also each library type
 (mapping, normalization, and expression).
 
@@ -56,7 +56,7 @@ The following filename formats are expected:
 * **Expression:** `demux_data/pool{pool}_techrep{techrep}_{condition}_{library}_{read}.fastq.gz`
 * **Normalization:** `demux_data/pool{pool}_techrep{techrep}_{condition}_{library}_{read}.fastq.gz`
 
-**`fastq`**
+**`fastq/`**
 
 This directory must contain two files, `Undetermined_R1.fastq.gz` and
 `Undetermined_R2.fastq.gz`. These are the full, still-multiplexed fastq files
@@ -120,11 +120,11 @@ and two technical replicates for each, "1" and "2":
 4) Optionally edit the following parameters in the `Snakefile`, and ensure that
    the filenames in the input directory have the right corresponding pattern.
 
-| Parameter Name | Example                                      | Need to Modify? | Description                                                                                                                                                      |
-|----------------|----------------------------------------------|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `pool`         | `['a', 'b', 'c', 'd']`                       | Yes             | Names of the pools/experiments. Designate as many pools/experiments you want to analyze.                                                                         |
-| `techrep`      | `['1', '2']`                                 | Yes             | Number of technical replicates provided. Designate as many technical replicates you have.                                                                        |
-| `condition`    | `['treatmentA', 'treatmentB', 'control']`    | Yes             | Condition naming convention. Designate as many conditions you have.                                                                                              |
+| Parameter Name | Example                                      | Description                                                                                                                                                      |
+|----------------|----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `pool`         | `['a', 'b', 'c', 'd']`                       | Names of the pools/experiments. Designate as many pools/experiments you want to analyze.                                                                         |
+| `techrep`      | `['1', '2']`                                 | Number of technical replicates provided. Designate as many technical replicates you have.                                                                        |
+| `condition`    | `['treatmentA', 'treatmentB', 'control']`    | Condition naming convention. Designate as many conditions you have.                                                                                              |
 
 
 5) Run the Snakefile using `snakemake -j <N>` where `<N>` is the number of cores to provide.
