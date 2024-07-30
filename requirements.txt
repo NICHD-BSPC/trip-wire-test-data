@@ -1,0 +1,3 @@
+snakemake-minimal <8
+cutadapt
+seqtk
