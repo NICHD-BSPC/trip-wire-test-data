@@ -41,7 +41,7 @@ contents of those files look like this:
 
 ```
 barcode           norm   exp_1  chr_f  ori_f  pos_f      reads_f  mapq_f  freq1_f  freq2_f  chr_r  ori_r  pos_r      reads_r  mapq_r  freq1_r  freq2_r
-GATTTAGTCGCTCTCG  22249  37891  *      4      [0](2024-07-30_0.md)          8942     0.00    0.208    0.156    chr5   -      48504758   8830     39.02   0.394    0.247
+GATTTAGTCGCTCTCG  22249  37891  *      4      0          8942     0.00    0.208    0.156    chr5   -      48504758   8830     39.02   0.394    0.247
 TTGGTGGTGTAAGGGA  18845  10945  chr8   +      60954656   29617    34.61   0.193    0.161    chr8   -      60954872   29446    43.92   0.314    0.180
 AATACAAATCGTGGAA  16780  6067   *      4      0          7486     0.00    0.208    0.179    *      4      0          7393     2.50    0.286    0.147
 ```
