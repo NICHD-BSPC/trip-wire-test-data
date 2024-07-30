@@ -1,0 +1,7 @@
+env/
+fastq/
+full_dataset/
+logs/
+results/
+.snakemake/
+Snakefile.log
