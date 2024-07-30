@@ -120,11 +120,11 @@ and two technical replicates for each, "1" and "2":
 4) Optionally edit the following parameters in the `Snakefile`, and ensure that
    the filenames in the input directory have the right corresponding pattern.
 
-| Parameter Name | Example                                      | Need to Modify? | Description                                                                                                                                                      |
-|----------------|----------------------------------------------|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `pool`         | `['a', 'b', 'c', 'd']`                       | Yes             | Names of the pools/experiments. Designate as many pools/experiments you want to analyze.                                                                         |
-| `techrep`      | `['1', '2']`                                 | Yes             | Number of technical replicates provided. Designate as many technical replicates you have.                                                                        |
-| `condition`    | `['treatmentA', 'treatmentB', 'control']`    | Yes             | Condition naming convention. Designate as many conditions you have.                                                                                              |
+| Parameter Name | Example                                      | Description                                                                                                                                                      |
+|----------------|----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `pool`         | `['a', 'b', 'c', 'd']`                       | Names of the pools/experiments. Designate as many pools/experiments you want to analyze.                                                                         |
+| `techrep`      | `['1', '2']`                                 | Number of technical replicates provided. Designate as many technical replicates you have.                                                                        |
+| `condition`    | `['treatmentA', 'treatmentB', 'control']`    | Condition naming convention. Designate as many conditions you have.                                                                                              |
 
 
 5) Run the Snakefile using `snakemake -j <N>` where `<N>` is the number of cores to provide.
