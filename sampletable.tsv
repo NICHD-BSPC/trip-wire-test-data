@@ -1,0 +1,9 @@
+sample_id	experiment	group	cond	pool	techrep	expr	norm	mapp	R1	R2
+pool2_techrep1_control	1	wt	control	2	1	ACGAGTGCGT	TACTGAGCTA	TCGTCGCTCG	test_data/test_R1.fastq.gz	test_data/test_R2.fastq.gz
+pool2_techrep2_control	1	wt	control	2	2	CTCGCGTGTC	CGAGAGATAC	TCGTCGCTCG	test_data/test_R1.fastq.gz	test_data/test_R2.fastq.gz
+pool4_techrep1_control	1	wt	control	4	1	TGATACGTCT	ATACGACGTA	ACATACGCGT	test_data/test_R1.fastq.gz	test_data/test_R2.fastq.gz
+pool4_techrep2_control	1	wt	control	4	2	CATAGTAGTG	TCACGTACTA	ACATACGCGT	test_data/test_R1.fastq.gz	test_data/test_R2.fastq.gz
+pool2_techrep1_treatment	1	wt	treatment	2	1	AGCACTGTAG	TGTACTACTC	ACTACTATGT	test_data/test_R1.fastq.gz	test_data/test_R2.fastq.gz
+pool2_techrep2_treatment	1	wt	treatment	2	2	ATCAGACACG	ACGACTACAG	ACTACTATGT	test_data/test_R1.fastq.gz	test_data/test_R2.fastq.gz
+pool4_techrep1_treatment	1	wt	treatment	4	1	ATATCGCGAG	CGTAGACTAG	ACTGTACAGT	test_data/test_R1.fastq.gz	test_data/test_R2.fastq.gz
+pool4_techrep2_treatment	1	wt	treatment	4	2	CGTGTCTCTA	TACGAGTATG	ACTGTACAGT	test_data/test_R1.fastq.gz	test_data/test_R2.fastq.gz
