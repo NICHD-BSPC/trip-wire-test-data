@@ -170,3 +170,37 @@ rule catAllReads:
         runtime=120
     shell:
         "cat {input} | gzip -c > {output}"
+
+
+rule download_reference_fastas:
+    output:
+        "index/small.fa"
+    resources:
+        mem_mb=1024,
+        runtime=120
+    shell:
+        "cat /dev/null > {output} "
+        "&& wget -O - https://hgdownload.soe.ucsc.edu/goldenPath/mm10/chromosomes/chr19.fa.gz | gunzip -c >> {output} "
+        "&& wget -O - https://hgdownload.soe.ucsc.edu/goldenPath/mm10/chromosomes/chr14.fa.gz | gunzip -c >> {output} "
+
+
+rule build_index:
+    input:
+        "index/small.fa"
+    output:
+        "index/small.1.bt2",
+        "index/small.2.bt2",
+        "index/small.3.bt2",
+        "index/small.4.bt2",
+        "index/small.rev.1.bt2",
+        "index/small.rev.2.bt2",
+    resources:
+        mem_mb=4 * 1024,
+        runtime=120
+    threads:
+        8
+    shell:
+        "bowtie2-build "
+        "--threads {threads} "
+        "{input} "
+        "index/small "
