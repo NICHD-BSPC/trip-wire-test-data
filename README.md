@@ -1,7 +1,7 @@
 ## TRIP-WIRE Test Data Generation Script
 
 This directory will generate test data `test_R1.fastq.gz` and `test_R2.fastq.gz`
-files from a full TRIP experiment. These test files will contain only reads
+files from a full TRIP experiment on mouse. These test files will contain only reads
 from chromosome 19 identified in the normalization, expression, and
 mapping libraries. The small size of the test data allows for downstream
 analyses to run quickly and are designed for CI/CD testing of TRIP analysis
@@ -33,7 +33,7 @@ Here is a DAG (directed acyclic graph) of the workflow:
 
 **`full_dataset/`**
 
-This includes two subdirectories, `trip_output` and `demux_data`.
+This must include two subdirectories, `trip_output` and `demux_data`.
 
 `full_dataset/trip_output/` has one directory for each pool/techrep/condition combination,
 and inside that directory is a single file, `final_TRIP_data_table.txt`. The
@@ -62,10 +62,10 @@ This directory must contain two files, `Undetermined_R1.fastq.gz` and
 `Undetermined_R2.fastq.gz`. These are the full, still-multiplexed fastq files
 from which the data in `full_dataset/demux_data` was generated.
 
-For example, the directory with the files from this repository, plus the conda
-environment, and all input data would look something like this for a situation
-with R1 and R2, conditions "treatment" and "control", two pools "a" and "b",
-and two technical replicates for each, "1" and "2":
+For example, here is what the directory would look like with the files from
+this repository, plus the conda environment, and all input data for an
+experiment with R1 and R2, conditions "treatment" and "control", two pools "a"
+and "b", and two technical replicates for each, "1" and "2":
 
 ```
 .
@@ -133,6 +133,9 @@ and two technical replicates for each, "1" and "2":
 
 The expected output will be found in **`results/test_R1.fastq.gz`** and **`results/test_R2.fastq.gz`**.
 
+The results of running this workflow on (currently-unpublished) data can be
+found in this repo at these paths.
+
 ## Understanding the Snakefile
 
 The rules within the Snakefile will do the following:
@@ -162,8 +165,9 @@ AAAATTCATAGCAGCA
 
 Note that different pools can share a small number of barcodes. If we were to
 look for a chr19 barcode from pool A directly in the full (still-multiplexed)
-dataset, we might find pool B reads with that barcode but they will not
-necessarily be mapped to chr19.
+dataset, we might find pool B reads with that barcode -- but they will not
+necessarily be mapped to chr19, and thus our dataset would no longer be
+restricted to chr19 and as a result it would grow larger.
 
 So we look for barcodes in a pool-specific manner, using the demultiplexed fastq files.
 
@@ -260,3 +264,9 @@ Output files will be named:
 results/test_R1.fastq
 results/test_R2.fastq
 ```
+
+**8) download_reference_fastas, build_index:** Make a minimal bowtie2 index
+
+This index is built using chr19 and chr14 of the UCSC mm10 assembly and stored
+in the repo so that it can be used by other tools for testing, rather than
+requiring a full index of the entire mouse genome.
