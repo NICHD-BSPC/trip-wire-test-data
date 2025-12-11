@@ -1,0 +1,9 @@
+# This config is only used for testing the downstream Rmd, which only uses the
+# sampletable field -- so we don't need additional config information.
+sampletable: 'configs/test_sampletable.tsv'
+
+# Configure the contrast to be run in downstream analysis.
+contrast:
+  column: cond
+  control: untreated
+  treatment: treated

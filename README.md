@@ -1,25 +1,36 @@
 ## TRIP-WIRE Test Data Generation Script
 
-This directory will generate test data `test_R1.fastq.gz` and `test_R2.fastq.gz`
-files from a full TRIP experiment on mouse. These test files will contain only reads
-from chromosome 19 identified in the normalization, expression, and
-mapping libraries. The small size of the test data allows for downstream
-analyses to run quickly and are designed for CI/CD testing of TRIP analysis
-software.
+This directory will generate test data `test_R1.fastq.gz` and
+`test_R2.fastq.gz` files from a full TRIP experiment on mouse. These test files
+will contain only reads from chromosome 19 identified in the normalization,
+expression, and mapping libraries. The small size of the test data allows for
+downstream analyses to run quickly and are designed for CI/CD testing of the [TRIP
+analysis software, trip-wire](https://github.com/NICHD-BSPC/trip-wire).
 
-This test extracts chr19 barcodes from the normalization, expression, and
-mapping library from the either the original TRIP Perl script or the TRIP-wire
-pipeline. The test dataset is built from 2 pools/experiments for 2 conditions
-with 2 technical replicates each. See below for configuration details.
+The workflow in this repo extracts chr19 barcodes from the normalization,
+expression, and mapping library from the either the original TRIP Perl script
+or the TRIP-wire pipeline. The test dataset is built from 2 pools/experiments
+for 2 conditions with 2 technical replicates each. See below for configuration
+details.
 
-The data are included in this repository and are the primary output. The code
-in the repository and the instructions below are for re-generating test data --
-perhaps from a different kind of experiment or different organism, or using
-different parameters.
+The data resulting data are included in this repo. The code in the repository
+and the instructions below are for re-generating test data -- perhaps from
+a different kind of experiment or different organism, or using different
+parameters.
 
 Here is a DAG (directed acyclic graph) of the workflow:
 
 ![rulegraph.png](rulegraph.png)
+
+The example fastq files in this repo are a good size for testing the Snakemake
+workflow, but they result in too few barcode with nonzero counts such that the
+downstream DESeq2 analysis can't estimate variance.
+
+So in the [downstream](downstream) directory we provide a separate set of
+results with subsetted samples and randomized names from running the workflow
+on actual data that can be used for testing the RMarkdown differential analysis
+in trip-wire.
+
 
 ## Running the workflow
 

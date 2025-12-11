@@ -5,3 +5,5 @@ logs/
 results/
 .snakemake/
 Snakefile.log
+.*
+subsetting.py

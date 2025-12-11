@@ -1,0 +1,17 @@
+	sample_id	experiment	group	cond	pool	techrep	expr	norm	mapp	R1	R2
+0	experiment1_untreated_pool15_rep1	experiment1	WT	untreated	15	1	ACGAGTGCGT	ATATCGCGAG	CGTCTAGTAC	/data/experiment1/pool_R1.fastq.gz	/data/experiment1/pool_R2.fastq.gz
+1	experiment1_untreated_pool15_rep2	experiment1	WT	untreated	15	2	CTCGCGTGTC	CGTGTCTCTA	CGTCTAGTAC	/data/experiment1/pool_R1.fastq.gz	/data/experiment1/pool_R2.fastq.gz
+2	experiment1_untreated_pool16_rep1	experiment1	WT	untreated	16	1	TGATACGTCT	TAGTATCAGC	TCTACGTAGC	/data/experiment1/pool_R1.fastq.gz	/data/experiment1/pool_R2.fastq.gz
+3	experiment1_untreated_pool16_rep2	experiment1	WT	untreated	16	2	CATAGTAGTG	TCTCTATGCG	TCTACGTAGC	/data/experiment1/pool_R1.fastq.gz	/data/experiment1/pool_R2.fastq.gz
+4	experiment1_treated_pool15_rep1	experiment1	WT	treated	15	1	ACGCTCGACA	TACTGAGCTA	TGTACTACTC	/data/experiment1/pool_R1.fastq.gz	/data/experiment1/pool_R2.fastq.gz
+5	experiment1_treated_pool15_rep2	experiment1	WT	treated	15	2	AGACGCACTC	CGAGAGATAC	TGTACTACTC	/data/experiment1/pool_R1.fastq.gz	/data/experiment1/pool_R2.fastq.gz
+6	experiment1_treated_pool16_rep1	experiment1	WT	treated	16	1	AGCACTGTAG	ATACGACGTA	ACGACTACAG	/data/experiment1/pool_R1.fastq.gz	/data/experiment1/pool_R2.fastq.gz
+7	experiment1_treated_pool16_rep2	experiment1	WT	treated	16	2	ATCAGACACG	TCACGTACTA	ACGACTACAG	/data/experiment1/pool_R1.fastq.gz	/data/experiment1/pool_R2.fastq.gz
+8	experiment2_untreated_pool1_rep1	experiment2	KO	untreated	1	1	ACGAGTGCGT	ATATCGCGAG	CGTCTAGTAC	/data/experiment2/pool_R1.fastq.gz	/data/experiment2/pool_R2.fastq.gz
+9	experiment2_untreated_pool1_rep2	experiment2	KO	untreated	1	2	CTCGCGTGTC	CGTGTCTCTA	CGTCTAGTAC	/data/experiment2/pool_R1.fastq.gz	/data/experiment2/pool_R2.fastq.gz
+10	experiment2_untreated_pool2_rep1	experiment2	KO	untreated	2	1	TGATACGTCT	TAGTATCAGC	TCTACGTAGC	/data/experiment2/pool_R1.fastq.gz	/data/experiment2/pool_R2.fastq.gz
+11	experiment2_untreated_pool2_rep2	experiment2	KO	untreated	2	2	CATAGTAGTG	TCTCTATGCG	TCTACGTAGC	/data/experiment2/pool_R1.fastq.gz	/data/experiment2/pool_R2.fastq.gz
+12	experiment2_treated_pool1_rep1	experiment2	KO	treated	1	1	ACGCTCGACA	TACTGAGCTA	TGTACTACTC	/data/experiment2/pool_R1.fastq.gz	/data/experiment2/pool_R2.fastq.gz
+13	experiment2_treated_pool1_rep2	experiment2	KO	treated	1	2	AGACGCACTC	CGAGAGATAC	TGTACTACTC	/data/experiment2/pool_R1.fastq.gz	/data/experiment2/pool_R2.fastq.gz
+14	experiment2_treated_pool2_rep1	experiment2	KO	treated	2	1	AGCACTGTAG	ATACGACGTA	ACGACTACAG	/data/experiment2/pool_R1.fastq.gz	/data/experiment2/pool_R2.fastq.gz
+15	experiment2_treated_pool2_rep2	experiment2	KO	treated	2	2	ATCAGACACG	TCACGTACTA	ACGACTACAG	/data/experiment2/pool_R1.fastq.gz	/data/experiment2/pool_R2.fastq.gz
