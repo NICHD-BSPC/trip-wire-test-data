@@ -1,4 +1,4 @@
-env/
+env
 fastq/
 full_dataset/
 logs/

@@ -7,3 +7,5 @@ contrast:
   column: cond
   control: untreated
   treatment: treated
+
+alpha: 0.1
